@@ -196,17 +196,22 @@ console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice t
 - Instances of CuboidMaker should initialize `length`, `width` and `height` properties
 */
 
-function CuboidMaker(/*Your Code Here */){
-  /*Your Code Here */
-}
+function CuboidMaker(props){
+  this.length = props.length,
+  this.width = props.width,
+  this.height = props.height
+};
+const cuboid1 = new CuboidMaker({length:400,width:500, height:600})
 
+console.log(cuboid1);
 
 /* 🐴🐴🐴 Step 2: Volume Method 🐴🐴🐴
   Create a method called volume using CuboidMaker's prototype that returns the volume of a given cuboid's length, width, and height
   💡 NOTE: Formula for cuboid volume: length * width * height   
 */
-
-
+CuboidMaker.prototype.volume = function(){
+return this.length * this.width * this.height
+}
 
 
 /* 🐴🐴🐴 Step 3: Surface Area Method 🐴🐴🐴
